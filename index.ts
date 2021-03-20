@@ -10,9 +10,7 @@ class Product {
   price: number;
 
   static findProductsBelow(price:number){
-    return products.filter(item => {
-      item.price < price;
-    })
+    return products.filter(item =>  item.price < price)
   }
 }
 
@@ -32,8 +30,3 @@ class User {
 
 export { User, Product };
 
-function main(){
-
-}
-
-main();
