@@ -28,7 +28,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.concat(newProducts);
+    this.products = this.products.concat(newProducts);
   }
 }
 
