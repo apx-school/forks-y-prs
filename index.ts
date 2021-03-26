@@ -23,10 +23,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]){
-    for (let index = 0; index < newProducts.length; index++) {
-      const element = newProducts[index];
-      return this.products.push(element)
-    };
+    this.products.concat(newProducts)
   }
 }
 
