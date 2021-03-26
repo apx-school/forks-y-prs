@@ -9,7 +9,8 @@ class Product {
   name: string;
   price: number;
   static findProductsBelow(price:number):Product[]{
-    return products.filter((p)=>{ p.price < price })
+    const products = products.filter((p)=>{  return p.price < price })
+    return products
   }
 }
 
