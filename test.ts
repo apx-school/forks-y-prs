@@ -11,6 +11,7 @@ test("Testeo la clase Product y sus métodos", (t) => {
   const producto = new Product("termo", 500);
   const productosNoTanCaros = Product.findProductsBelow(250);
 
+
   user.addProduct(producto);
   user.addProducts(productosNoTanCaros);
 
