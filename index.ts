@@ -1,4 +1,4 @@
-import products from "./products.json";
+import * as products from "./products.json";
 
 class Product {
   constructor(name: string, price: number) {
@@ -27,5 +27,4 @@ class User {
     newProducts.forEach((x) => this.products.push(x));
   }
 }
-console.log(products);
 export { User, Product };
