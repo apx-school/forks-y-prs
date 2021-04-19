@@ -8,6 +8,11 @@ class Product {
   id: number;
   name: string;
   price: number;
+  //Agregar Metodo Static findProductsBelow
+  static findProductsBelow(belowPri: number) {
+    const menorPrecio = products.filter((r) => r.price < belowPri);
+    return menorPrecio;
+  }
 }
 
 class User {
@@ -19,8 +24,9 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
+  //Arreglar este metodo
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products = this.products.concat(newProducts);
   }
 }
 
