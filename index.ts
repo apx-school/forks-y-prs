@@ -26,7 +26,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    newProducts.map((item) => this.products.push(item));
+    this.products = this.products.concat(newProducts);
   }
 }
 
