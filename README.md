@@ -10,5 +10,3 @@ Correr:
 # Para correr los tests ejecutar
 
 `npm run test`
-
-vamo che
