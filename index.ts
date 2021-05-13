@@ -4,7 +4,6 @@ class Product {
   constructor(name: string, price: number) {
     this.name = name;
     this.price = price;
-    this.id;
   }
   id: number;
   name: string;
