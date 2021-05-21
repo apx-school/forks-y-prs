@@ -19,7 +19,7 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product[]) {
+  addProducts(newProducts: Product) {
     this.products.push(newProducts);
   }
 }
