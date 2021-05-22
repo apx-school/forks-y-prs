@@ -1,4 +1,5 @@
 import * as products from "./products.json";
+import * as fs from "fs";
 
 class Product {
   constructor(name: string, price: number) {
@@ -8,6 +9,19 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(precioBase: number) {
+    const coleccion = fs.readFileSync("./products.json");
+    const texto = coleccion.toString();
+    const parsear = JSON.parse(texto);
+
+    const funcionEncontrar: Product[] = parsear.filter((item) => {
+      if (item.price < precioBase) {
+        return item;
+      }
+    });
+    return funcionEncontrar;
+  }
 }
 
 class User {
@@ -20,7 +34,9 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    newProducts.forEach((item) => {
+      this.products.push(item);
+    });
   }
 }
 
