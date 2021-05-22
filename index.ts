@@ -8,6 +8,10 @@ class Product {
   id: number;
   name: string;
   price: number;
+  static findProductsBelow(precioBase:number) {
+    const productsBellow = products.filter(p => p.price < precioBase);
+    return productsBellow;
+  }
 }
 
 class User {
@@ -20,7 +24,9 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    newProducts.forEach(element => {
+      this.products.push(element)
+    });
   }
 }
 
