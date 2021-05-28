@@ -19,8 +19,11 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+  static findProductsBelow(precioBase: number) {
+    const productosMasBaratos = products.find((prod) => {
+      prod.price < precioBase;
+    });
+    return productosMasBaratos;
   }
 }
 
