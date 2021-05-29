@@ -9,13 +9,14 @@ class Product {
   name: string;
   price: number;
   
- static findProductsBelow (precioBase:number) {
-  
-    const filtrado=products.filter(function (i){
-      return i.price<precioBase
-    })
-    return filtrado
-  };
+ static findProductsBelow (precioBase: number) {
+   
+   const filtrado=products.filter(function (i){
+     return i.price<precioBase
+   })
+   return filtrado
+ };
+ 
     
   }
 
@@ -30,8 +31,7 @@ class User {
     this.products.push(newProduct);
     }
   addProducts(newProducts: Product []) {
-     const productos= this.products.concat(newProducts);
-     return productos
+     this.products = this.products.concat(newProducts);
   }
 
   
@@ -39,5 +39,5 @@ class User {
 
 
 export { User, Product };
-
+ 
 
