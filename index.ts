@@ -11,8 +11,7 @@ class Product {
   }
 
   static findProductsBelow(price: number) {
-    let productsBelow = products.filter((x) => x.price < price);
-    return productsBelow;
+    return products.filter((x) => x.price < price);
   }
 }
 
