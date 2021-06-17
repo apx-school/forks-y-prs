@@ -27,7 +27,8 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.concat(newProducts);
+    const arrayConNuevosProductos = this.products.concat(newProducts);
+    this.products = arrayConNuevosProductos;
   }
 }
 
