@@ -14,7 +14,7 @@ class Product {
     return productos.filter((i) => {
       return i.price < precio;
     });
-  }
+  } 
 }
 
 class User {
