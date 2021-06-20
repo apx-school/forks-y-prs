@@ -10,7 +10,11 @@ class Product {
   price: number;
 
   // Método estático para buscar dentro del JSON todos los precios menores a X valor: Utiliza el metodo de array filter() con el  array de objetos/coll importado del JSON, llamdo "productos". Con el metodo filter() itero las posiciones de la coll y le indico que devuelva unicamente la propiedades de la coll llamada "price" que sesa menor al parametro "precio"
- 
+  static findProductsBelow(precio: number) {
+    return productos.filter((i) => {
+      return i.price < precio;
+    });
+  }
 }
 
 class User {
