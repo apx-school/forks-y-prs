@@ -1,5 +1,6 @@
 import * as products from "./products.json";
-
+// import * as fs from "fs";
+// para que tome el fs tengo que poner npm install --save-dev @types node
 class Product {
   constructor(name: string, price: number) {
     this.name = name;
@@ -9,6 +10,8 @@ class Product {
   name: string;
   price: number;
   static findProductsBelow(precioBase: number) {
+    // const string = fs.readfileSync("./products.json").toStirng();
+    // const collection = JSON.parse(string)
     return products.filter((p) => p.price < precioBase);
   }
 }
@@ -25,6 +28,7 @@ class User {
   addProducts(newProducts: Product[]) {
     newProducts.forEach((a) => {
       this.products.push(a);
+      // this.products = this.products.concat(newProducts)
     });
   }
 }
