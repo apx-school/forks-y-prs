@@ -6,6 +6,7 @@ test("Testeo la clase User", (t) => {
 
   t.is(user.name, "marce");
 });
+
 test("Testeo la clase Product y sus métodos", (t) => {
   const user = new User("marce");
   const producto = new Product("termo", 500);
@@ -16,6 +17,6 @@ test("Testeo la clase Product y sus métodos", (t) => {
 
   t.is(user.products[0].name, "termo");
   t.is(user.products[0].price, 500);
-  t.is(user.products[1].id, 1);
-  t.is(user.products[2].id, 2);
+  t.is(user.products[1].id, 3);
+  t.is(user.products[2].id, 4);
 });
