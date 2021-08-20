@@ -1,4 +1,5 @@
 import * as products from "./products.json";
+import * as fs from "fs";
 
 class Product {
   constructor(name: string, price: number) {
@@ -8,6 +9,15 @@ class Product {
   id: number;
   name: string;
   price: number;
+  
+  static findProductsBelow(precioBase:number){
+    const string = fs.readFileSync("./products.json").toString();
+    const productosParseados = JSON.parse(string);
+    const productosFiltradosPorPrecio = productosParseados.filter((prods:Product)=>{
+      if (prods.price < precioBase){ return true}
+    })
+    return productosFiltradosPorPrecio;
+  }
 }
 
 class User {
@@ -20,8 +30,12 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    const productos: Product[] = newProducts;
+    productos.forEach((thisProductos) => {
+      this.products.push(thisProductos);
+    })
   }
+
 }
 
 export { User, Product };
