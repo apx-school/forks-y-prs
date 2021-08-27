@@ -1,5 +1,5 @@
 import test from "ava";
-import { User, Product } from "./index";
+import {User, Product} from "./index";
 
 test("Testeo la clase User", (t) => {
   const user = new User("marce");
