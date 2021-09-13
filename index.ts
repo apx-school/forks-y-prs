@@ -9,12 +9,12 @@ class Product {
   name: string;
   price: number;
   static findProductsBelow(precioBase: number) {
-    var precioMasBajo = products.map(function (item) {
-      if (item.price < precioBase) {
-        return item;
+    var productosBajoPrecio = products.map((p) => {
+      if (p.price < precioBase) {
+        return p;
       }
     });
-    return precioMasBajo;
+    return productosBajoPrecio;
   }
 }
 
