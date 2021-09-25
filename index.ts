@@ -8,19 +8,28 @@ class Product {
   id: number;
   name: string;
   price: number;
+  static findProductsBelow(precioBase:number){
+    return products.filter(x => x.price < precioBase)
+  }
 }
 
 class User {
   constructor(name: string) {
     this.name = name;
   }
+  
   name: string;
   products: Product[] = [];
+  
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
+  
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    newProducts.forEach(element => {
+      return this.products.push(element);
+      
+    });
   }
 }
 
