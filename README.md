@@ -1,5 +1,5 @@
 # Desafío
-Tienen que importar e instanciar las clases User y Producto y probar todos sus métodos ah ok
+Tienen que importar e instanciar las clases User y Producto y probar todos sus métodos
 
 # Para inicializar este proyecto
 
