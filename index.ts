@@ -30,8 +30,9 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
     }
+
   addProducts(newProducts: Product []) {
-     this.products = this.products.concat(newProducts);
+     return this.products = this.products.concat(newProducts);
   }
 
   
