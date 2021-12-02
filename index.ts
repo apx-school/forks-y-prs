@@ -1,5 +1,5 @@
 import * as products from "./products.json";
-
+// Cambio de prueba
 class Product {
   constructor(name: string, price: number) {
     this.name = name;
