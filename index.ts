@@ -26,7 +26,7 @@ class User {
     return this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    return this.products.concat(newProducts);
+    this.products = this.products.concat(newProducts);
   }
 }
 export { User, Product };
