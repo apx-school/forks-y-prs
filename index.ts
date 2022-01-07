@@ -8,6 +8,12 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(precioBase: number) {
+    return products.filter(function (item) {
+      return item.price < precioBase;
+    });
+  }
 }
 
 class User {
@@ -17,11 +23,10 @@ class User {
   name: string;
   products: Product[] = [];
   addProduct(newProduct: Product) {
-    this.products.push(newProduct);
+    return this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    return this.products.concat(newProducts);
   }
 }
-
 export { User, Product };
