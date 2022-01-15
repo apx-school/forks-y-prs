@@ -5,6 +5,15 @@ class Product {
     this.name = name;
     this.price = price;
   }
+
+  static findProductsBelow(precioBase: number) {
+    const productsBelows = products.filter((objPoduct) => {
+      return objPoduct.price < precioBase;
+    });
+
+    return productsBelows;
+  }
+
   id: number;
   name: string;
   price: number;
@@ -20,7 +29,13 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    //la forma optima con metodos
+    this.products = this.products.concat(newProducts);
+
+    //manera de mariano mezcla facu y curso
+    /* for (let i = 0; i < newProducts.length; i++) {
+      this.products.push(newProducts[i]);
+    }*/
   }
 }
 
