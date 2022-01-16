@@ -8,6 +8,12 @@ class Product {
   id: number;
   name: string;
   price: number;
+  static findProductsBelow(precioBase:number) {
+    const filtrarProductos = products.filter((p)=>{ return p.price< precioBase})
+    return filtrarProductos
+
+   
+  }
   
 }
 
