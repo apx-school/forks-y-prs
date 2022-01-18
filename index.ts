@@ -8,6 +8,12 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(precioBase: number) {
+    const myProducts = products;
+    const productsBelow = myProducts.filter((x) => x.price < precioBase);
+    return productsBelow;
+  }
 }
 
 class User {
@@ -20,8 +26,14 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    const addProducts = newProducts.forEach((x) => this.addProduct(x));
+    return addProducts;
   }
 }
+
+var user = new User("Santiago");
+var producto = new Product("jamon", 15);
+var producto2 = new Product("queso", 16);
+var producto3 = new Product("salame", 16);
 
 export { User, Product };
