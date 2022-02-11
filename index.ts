@@ -8,6 +8,15 @@ class Product {
   id: number;
   name: string;
   price: number;
+  static findProductsBelow(precioBase: number) {
+    const productosPrecioMasBajo = []
+    for (var i = 0; i < products.length; i++){
+      if (products[i].price < precioBase) {
+        productosPrecioMasBajo.push(products[i])
+      }
+    }
+    return productosPrecioMasBajo
+  }
 }
 
 class User {
@@ -20,7 +29,8 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    const nuevosProductos = this.products.concat(newProducts);
+    this.products = nuevosProductos
   }
 }
 
