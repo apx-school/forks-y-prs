@@ -10,5 +10,3 @@ Correr:
 # Para correr los tests ejecutar
 
 `npm run test`
-
-este archivo sufrio un cambio

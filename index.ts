@@ -1,5 +1,5 @@
 import * as products from "./products.json";
-export { Product, User };
+
 
 class Product {
     constructor(name: string, price: number) {
@@ -31,8 +31,5 @@ class User {
     }
 }
 
-// export { User, Product };
+export { User, Product };
 
-// Agregar el método estático findProductsBelow(precioBase:number)
-// que devuelva los productos (que son importados desde ./products.json)
-// con el precio más bajo que el parámetro precioBase.
