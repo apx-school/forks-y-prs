@@ -25,8 +25,9 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: any) {
-    this.products.push(newProducts);
+  addProducts(newProducts: Product[]) {
+    newProducts.forEach((element) => this.products.push(element));
+    //this.products.push(newProducts);
   }
 }
 
