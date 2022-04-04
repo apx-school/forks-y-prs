@@ -8,7 +8,15 @@ class Product {
   id: number;
   name: string;
   price: number;
-}
+  static findProductsBelow(price:number){
+
+    var productsBelow = products.filter((x)=>{
+      return x.price < price
+    })
+
+    return productsBelow
+  }
+};
 
 class User {
   constructor(name: string) {
@@ -19,9 +27,16 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+  addProducts(newProducts: Product[]) {    
+    for (let i = 0; i < newProducts.length; i++) {
+      const element = newProducts[i];
+      this.products.push(element);
+    }
   }
-}
+
+};
+
+// const productosNoTanCaros = Product.findProductsBelow(250)
+// console.log(productosNoTanCaros);
 
 export { User, Product };
