@@ -8,6 +8,11 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(precioBase:number){
+  const Productosfiltrados = products.filter(p=> p.price < precioBase)
+  return Productosfiltrados
+  }
 }
 
 class User {
@@ -20,7 +25,13 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+   // this.products = this.products.concat(newProducts)
+    // el metodo concat para array permite recibir mas de un item, a diferencia de push q solo acepta uno.
+
+  for (let contador = 0; contador < newProducts.length; contador++) {
+    const productos = newProducts[contador];
+     this.products.push(productos);
+  }
   }
 }
 
