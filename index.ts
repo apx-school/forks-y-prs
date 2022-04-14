@@ -8,7 +8,17 @@ class Product {
   id: number;
   name: string;
   price: number;
-}
+  
+ static findProductsBelow (precioBase: number) {
+   
+   const filtrado=products.filter(function (i){
+     return i.price<precioBase
+   })
+   return filtrado
+ };
+ 
+    
+  }
 
 class User {
   constructor(name: string) {
@@ -16,12 +26,19 @@ class User {
   }
   name: string;
   products: Product[] = [];
+ 
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
+    }
+
+  addProducts(newProducts: Product []) {
+     return this.products = this.products.concat(newProducts);
   }
-  addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
-  }
+
+  
 }
 
+
 export { User, Product };
+ 
+
