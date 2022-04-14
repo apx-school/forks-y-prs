@@ -6,6 +6,7 @@ test("Testeo la clase User", (t) => {
 
   t.is(user.name, "marce");
 });
+
 test("Testeo la clase Product y sus métodos", (t) => {
   const user = new User("marce");
   const producto = new Product("termo", 500);
