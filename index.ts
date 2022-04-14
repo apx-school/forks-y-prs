@@ -5,6 +5,11 @@ class Product {
     this.name = name;
     this.price = price;
   }
+  static findProductsBelow(precioBase:number){
+    return products.filter(p=>{
+      return p.price < precioBase;
+    })
+  }
   id: number;
   name: string;
   price: number;
@@ -20,7 +25,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products = this.products.concat(newProducts);
   }
 }
 
