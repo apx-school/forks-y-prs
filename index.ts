@@ -5,9 +5,17 @@ class Product {
     this.name = name;
     this.price = price;
   }
+
   id: number;
   name: string;
   price: number;
+  
+  static findProductsBelow(precioBase: number):Product[] {
+    const productosMenoresQue = products.filter((cadaProducto) => {
+     return cadaProducto.price < precioBase
+    });
+    return productosMenoresQue;
+  }
 }
 
 class User {
@@ -16,11 +24,16 @@ class User {
   }
   name: string;
   products: Product[] = [];
+
+
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
+
+
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+  const listaNuevaDeProductos = this.products.concat(newProducts)
+  this.products = listaNuevaDeProductos
   }
 }
 
