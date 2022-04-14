@@ -1,4 +1,6 @@
-import * as products from "./products.json";
+
+import * as productsjson from "./products.json";
+
 
 class Product {
   constructor(name: string, price: number) {
@@ -8,6 +10,10 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(precioBase:number){
+    return productsjson.filter((item) => item.price < precioBase)
+  }
 }
 
 class User {
@@ -19,9 +25,15 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
+  
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    for (let index = 0; index < newProducts.length; index++) {
+      this.products.push(newProducts[index])
+    } 
   }
+
+
+  
 }
 
 export { User, Product };
