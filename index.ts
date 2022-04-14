@@ -5,6 +5,12 @@ class Product {
     this.name = name;
     this.price = price;
   }
+  //Se procede a utlizar una función estática, utilizando filter.
+  //para buscar los productos con el precio menor
+  //al parámetro precioBase.
+  static findProductsBelow(precioBase: number) {
+    return products.filter((x) => x.price < precioBase);
+  }
   id: number;
   name: string;
   price: number;
@@ -19,8 +25,12 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
+  //Se realiza el arreglo del método addProducts utilizando forEach,
+  //para iterar el array y agregar un nuevo producto.
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    newProducts.forEach((x) => {
+      this.products.push(x);
+    });
   }
 }
 
