@@ -5,6 +5,13 @@ class Product {
     this.name = name;
     this.price = price;
   }
+  static findProductsBelow(price:number){
+    const nuevoArray=products.filter(p=>{
+      return p.price < price
+    }
+      )
+      return nuevoArray
+    }
   id: number;
   name: string;
   price: number;
@@ -20,7 +27,9 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+  // a continuación se usa el método .concat(), que lo que hace es agregar más de un ítem a 
+  // un array (parecido a un push pero con más de un ítem)
+    this.products=this.products.concat(newProducts);
   }
 }
 
