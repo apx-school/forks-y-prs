@@ -13,8 +13,6 @@ test("Testeo la clase Product y sus métodos", (t) => {
   
   user.addProduct(producto);
   user.addProducts(productosNoTanCaros);
-
-  console.log(user.products);
   
 
   t.is(user.products[0].name, 'termo');
