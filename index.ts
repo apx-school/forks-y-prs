@@ -8,6 +8,13 @@ class Product {
   id: number;
   name: string;
   price: number;
+  
+  static findProductsBelow(precioBase: number) { 
+    const toString = JSON.stringify(products);
+    const parsearJson = JSON.parse(toString);
+  
+    return parsearJson.filter(i => i.price < precioBase);
+  }
 }
 
 class User {
@@ -20,8 +27,8 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
-  }
+      newProducts.forEach(i => this.products.push(i));
+   }
 }
 
 export { User, Product };
