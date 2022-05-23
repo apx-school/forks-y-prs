@@ -7,6 +7,7 @@
     "test": "ava"
   },
   "ava": {
+    "timeout": "10m",
     "extensions": {
       "ts": "module"
     },
@@ -14,7 +15,11 @@
       "configurableModuleFormat": true
     },
     "nodeArguments": [
-      "--loader=ts-node/esm"
+      "--loader=ts-node/esm",
+      "--experimental-specifier-resolution=node"
+    ],
+    "files":[
+      "test/**/*.spec.ts"
     ]
   },
   "keywords": [],
