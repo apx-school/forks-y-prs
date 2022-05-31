@@ -8,6 +8,13 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(price:number){
+   const nuevoArray  =  products.filter(p=>{
+  return  p.price < price
+    })
+    return nuevoArray
+  }
 }
 
 class User {
@@ -20,8 +27,23 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products = this.products.concat(newProducts);
   }
+// // static findProductsBelow(precioBase:number){
+// //   return function(precioBase){
+// //     const precioEncontrado = products.sort(function(a,b){
+// //     if(  a.price < b.price){
+// //       return -1
+// //     }
+// //     if (a.price > b.price){
+// //       return 1
+// //     }
+// //     return 0
+// //     })
+// //     console.log(precioEncontrado)
+// //   }
+  
+//   }
 }
 
 export { User, Product };
