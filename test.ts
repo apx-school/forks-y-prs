@@ -6,9 +6,11 @@ test("Testeo la clase User", (t) => {
 
   t.is(user.name, "marce");
 });
-test("Testeo la clase Product y sus métodos", (t) => {
-  const user = new User("marce");
+
+test("Testeo la clase Product y métodos de User", (t) => {
   const producto = new Product("termo", 500);
+
+  const user = new User("marce");
   const productosNoTanCaros = Product.findProductsBelow(250);
 
   user.addProduct(producto);

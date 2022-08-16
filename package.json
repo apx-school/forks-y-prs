@@ -2,13 +2,13 @@
   "name": "test-ava",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+
   "scripts": {
     "test": "ava"
   },
   "ava": {
     "extensions": {
-      "ts": "module"
+      "ts": "commonjs"
     },
     "nonSemVerExperiments": {
       "configurableModuleFormat": true
