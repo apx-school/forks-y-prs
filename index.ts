@@ -22,7 +22,7 @@ class User {
     this.name = name;
   }
   name: string;
-  products: Product [] = [];
+  products: Product[] = [];
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
