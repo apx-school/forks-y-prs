@@ -8,6 +8,14 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  //devuelve los productos (que son importados desde ./products.json)
+  // con el precio más bajo que el parámetro precioBase.
+  static findProductsBelow(precioBase: number) {
+    return products.filter((producto) => {
+      return producto.price < precioBase;
+    });
+  }
 }
 
 class User {
@@ -20,7 +28,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products = this.products.concat(newProducts);
   }
 }
 
