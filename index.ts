@@ -8,7 +8,13 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(precioBase:number){
+    let arr : Product[] = products["default"].filter(ele=> ele.price < precioBase)
+    return arr
+  }
 }
+
 
 class User {
   constructor(name: string) {
@@ -20,7 +26,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products.push(...newProducts);
   }
 }
 
