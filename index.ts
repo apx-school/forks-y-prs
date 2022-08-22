@@ -8,10 +8,13 @@ class Product {
   id: number;
   name: string;
   price: number;
-  static findProductsBelow(precio:number){
-    return products.filter(el=>el.price < precio)
+
+  static findProductsBelow(precioBase:number){
+    let arr : Product[] = products["default"].filter(ele=> ele.price < precioBase)
+    return arr
   }
 }
+
 
 class User {
   constructor(name: string) {
