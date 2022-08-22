@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
+    "esModuleInterop": true // Or else TypeScript will complain about CJS packages, even if Node can `import` them
+,
     "moduleResolution": "node",
     "resolveJsonModule": true
   }
