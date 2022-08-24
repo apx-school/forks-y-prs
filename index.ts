@@ -22,12 +22,18 @@ class User {
   }
 
   name: string;
-  products: Product[] = [];
+  arrayProductVacio: Product[] = [];
+  ///////// Agrega solo 1 producto!
   addProduct(newProduct: Product) {
-    this.products.push(newProduct);
+    this.arrayProductVacio.push(newProduct);
   }
+  // Agrega varios productos!////
   addProducts(newProducts: Product[]) {
-    this.products = this.products.concat(newProducts); ///
+    newProducts.forEach((item) => {
+      this.arrayProductVacio.push(item);
+    });
+
+    // this.arrayProductVacio = this.arrayProductVacio.concat(newProducts); ///
     //se usa para unir dos o más arrays. Este método no cambia los arrays existentes, sino que devuelve un nuevo array.
   }
 }
