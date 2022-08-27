@@ -1,26 +1,25 @@
 {
-  "name": "test-ava",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
-  "scripts": {
-    "test": "ava"
+  "nombre": " prueba-ava ",
+  "versión": " 1.0.0 ",
+  "descripción": " ",
+  "principal": " index.ts ",
+  "guiones": {
+    "prueba": " ava "
   },
   "ava": {
-    "extensions": {
-      "ts": "module"
+    "extensiones": {
+      "ts": " módulo "
     },
-    "nodeArguments": [
-      "--loader=ts-node/esm"
+    "argumentos de nodo": [
+      " --loader=nodo-ts/esm "
     ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@ava/typescript": "2",
-    "ava": "^4.3.3",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
+  "palabras clave": [],
+  "autor": " ",
+  "licencia": " ISC ",
+  "Dependencias de desarrollo": {
+    "ava": " ^4.1.0 ",
+    "ts-nodo": " ^10.9.1 ",
+    "mecanografiado": " ^4.6.3 "
   }
 }
