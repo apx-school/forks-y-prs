@@ -10,6 +10,7 @@ class Product {
       return i.price < precioBase;
     });
     return nuevo;
+
   }
   id: number;
   name: string;
@@ -27,6 +28,7 @@ class User {
   }
   addProducts(newProducts: Product[]) {
     this.products = this.products.concat(newProducts);
+    
   }
 }
 
