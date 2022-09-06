@@ -8,9 +8,10 @@ class Product {
 
 
   static findProductsBelow(price:number){
-return products.filter(p=>{
-  return p.price<price
+return products.filter(function(item){
+  return item.price<price
 })
+
 
   }
   id: number;
