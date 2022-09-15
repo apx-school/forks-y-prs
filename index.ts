@@ -10,7 +10,7 @@ class Product {
   price: number;
   static findProductsBelow (precioBase: number) {
     const nuevoArray = products.filter(p=>{
-p.price < precioBase 
+return p.price < precioBase 
     })
     return nuevoArray
   }
