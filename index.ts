@@ -13,11 +13,7 @@ class Product {
     const texto = JSON.stringify(products);
     const obj = JSON.parse(texto);
 
-    return obj.filter(item =>{
-      if(precioBase > item.price){
-        return item;
-      }
-    })
+    
   }
 }
 
@@ -32,7 +28,7 @@ class User {
   }
   addProducts(newProducts: Product[]) {
     return newProducts.forEach(item=>{
-      this.products.push(item);
+      this.products.push(item)
     });
   }
 } 
