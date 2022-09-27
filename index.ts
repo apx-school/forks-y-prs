@@ -18,6 +18,7 @@ class Product {
         return item;
       }
     })
+    
   }
 }
 
