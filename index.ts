@@ -6,9 +6,9 @@ class Product {
     this.price = price;
   }
   static findProductsBelow(price:number){
-    const nuevoArray = products.filter(p =>{
-      return p.price < price
-    })
+    const nuevoArray = products.filter(p => {
+      return p.price < price;
+    });
     return nuevoArray;
   }
   id: number;
