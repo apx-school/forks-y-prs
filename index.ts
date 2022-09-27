@@ -13,7 +13,11 @@ class Product {
     const texto = JSON.stringify(products);
     const obj = JSON.parse(texto);
 
-    
+    return obj.filter(item =>{
+      if(precioBase > item.price){
+        return item;
+      }
+    })
   }
 }
 
