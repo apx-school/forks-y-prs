@@ -1,14 +1,14 @@
 import * as products from "./products.json";
 
 class Product {
+  id: number;
+  name: string;
+  price: number;
+  
   constructor(name: string, price: number) {
     this.name = name;
     this.price = price;
   }
-
-  id: number;
-  name: string;
-  price: number;
 
   static findProductsBelow(precioBase: number) {
     return products.filter((product) => {
@@ -18,12 +18,12 @@ class Product {
 }
 
 class User {
+  name: string;
+  products: Product[] = [];
+  
   constructor(name: string) {
     this.name = name;
   }
-
-  name: string;
-  products: Product[] = [];
 
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
