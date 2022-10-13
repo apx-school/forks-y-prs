@@ -1,4 +1,6 @@
 import * as products from "./products.json";
+// const TEXTO_PARSEADO: object[] = JSON.parse(products);
+
 
 class Product {
   constructor(name: string, price: number) {
@@ -8,6 +10,9 @@ class Product {
   id: number;
   name: string;
   price: number;
+  static findProductsBelow(precioBase:number): any{
+    products.filter((p) => p.price <= precioBase)
+}
 }
 
 class User {
@@ -19,7 +24,7 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product[]) {
+  addProducts(newProducts: Product) {
     this.products.push(newProducts);
   }
 }
