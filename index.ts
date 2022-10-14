@@ -10,8 +10,14 @@ class Product {
   id: number;
   name: string;
   price: number;
-  static findProductsBelow(precioBase:number): any{
-    products.filter((p) => p.price <= precioBase)
+  static findProductsBelow(precioBase:number){
+    // const findProduct = products.filter(function(p){
+    //   if (p.price <= precioBase){
+    //     return p;
+    //   }
+    // })
+    // return findProduct;
+    return products.filter((p) => p.price <= precioBase);
 }
 }
 
@@ -24,8 +30,9 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product) {
-    this.products.push(newProducts);
+  addProducts(newProducts: Product[]) {
+    newProducts.forEach((p) => this.products.push(p))
+    // this.products.push(newProducts);
   }
 }
 
