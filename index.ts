@@ -24,10 +24,11 @@ class User {
     return this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    const items = newProducts.map((item) => {
-      this.products.push(item);
+    const items = newProducts.map((b) => {
+    this.products.push(b);
     });
     return items;
+    //return this.products.push(newProducts);
   }
 }
 
