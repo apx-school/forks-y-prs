@@ -7,16 +7,16 @@
     "test": "ava"
   },
   "ava": {
-    "extensions": {
-      "ts": "module"
+    "extensions": [
+      "ts"],
+      
+     "require": [
+      "ts-node/register"
+
+        ]
+      
     },
-    "nonSemVerExperiments": {
-      "configurableModuleFormat": true
-    },
-    "nodeArguments": [
-      "--loader=ts-node/esm"
-    ]
-  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
