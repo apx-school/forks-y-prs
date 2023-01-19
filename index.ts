@@ -5,6 +5,13 @@ class Product {
     this.name = name;
     this.price = price;
   }
+  static findProductsBelow(price: number) {
+    const productoFiltrado = products.filter((p) => {
+      return p.price < price;
+    });
+    return productoFiltrado;
+  }
+
   id: number;
   name: string;
   price: number;
@@ -20,8 +27,9 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products = this.products.concat(newProducts);
   }
 }
 
 export { User, Product };
+// metodo concat (sirve para agregar varios items de un array)
