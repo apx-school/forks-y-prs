@@ -1,13 +1,22 @@
 import * as products from "./products.json";
 
 class Product {
-  constructor(name: string, price: number) {
+  constructor(id: number, name: string, price: number) {
+    this.id = id
     this.name = name;
     this.price = price;
   }
   id: number;
   name: string;
   price: number;
+
+  static findProductsBellow(precioBase: number) {
+    for (const iterator of products) {
+      if (iterator.price < precioBase) {
+        return iterator
+      }
+    }
+  }
 }
 
 class User {
@@ -19,7 +28,7 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product[]) {
+  addProducts(newProducts: Product) {
     this.products.push(newProducts);
   }
 }
