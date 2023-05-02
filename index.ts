@@ -6,17 +6,16 @@ class Product {
     this.name = name;
     this.price = price;
   }
+  static findProductsBellow(precioBase: number) {
+    const nuevoArray = products.filter(function (p) {
+      return p.price < precioBase
+    })
+    return nuevoArray
+  }
+
   id: number;
   name: string;
   price: number;
-
-  static findProductsBellow(precioBase: number) {
-    for (const iterator of products) {
-      if (iterator.price < precioBase) {
-        return iterator
-      }
-    }
-  }
 }
 
 class User {
@@ -28,8 +27,8 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product) {
-    this.products.push(newProducts);
+  addProducts(newProducts: Product[]) {
+    this.products = this.products.concat(newProducts);
   }
 }
 

@@ -19,5 +19,5 @@ test("Testeo la clase Product y sus métodos", (t) => {
   t.is(user.products[0].name, "termo");
   t.is(user.products[0].price, 500);
   t.is(user.products[1].id, 1);
-
+  t.is(user.products[2].id, 2);
 });
