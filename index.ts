@@ -5,6 +5,18 @@ class Product {
     this.name = name;
     this.price = price;
   }
+  static findProductsBelow(precioBase:number) {
+    const newArray=[]
+    products.forEach((i)=>{
+      if(i.price<precioBase){
+        newArray.push(i)
+        
+      }else{}
+
+    })
+    
+    return newArray  
+  }
   id: number;
   name: string;
   price: number;
@@ -19,9 +31,11 @@ class User {
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
-  addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+  addProducts(newProducts: Product[]){
+    this.products= this.products.concat(newProducts)
+    
   }
+  
 }
 
 export { User, Product };
