@@ -20,7 +20,17 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(newProducts);
+    this.products.push(...newProducts);
+  }
+  static findProductsBelow(precioBase: number) {
+    const productosEncontrados: Product[] = [];
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      if (product.price <= precioBase) {
+        productosEncontrados.push(product);
+      }
+    }
+    return productosEncontrados;
   }
 }
 
