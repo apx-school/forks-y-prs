@@ -7,7 +7,8 @@ test("Testeo la clase User", (t) => {
   t.is(user.name, "marce");
 });
 
-// descomentar este test para trabajarlo
+// descomentar el siguiente test para trabajarlo
+
 // test("Testeo la clase Product y sus métodos", (t) => {
 //   const user = new User("marce");
 //   const producto = new Product("termo", 500);
