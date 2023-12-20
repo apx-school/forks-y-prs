@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "ava"
+    "test": "tsc && ava"
   },
   "ava": {
     "typescript": {
