@@ -5,8 +5,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "module": "CommonJS",
-    "rootDir": "src",
-    "outDir": "dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "noEmit": true
   },
   "include": ["./src/**/*.ts"]
