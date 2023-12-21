@@ -20,7 +20,9 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    this.products.push(...newProducts);
+    // esto no funciona:
+    this.products.push(newProducts);
+    // pista: push no suma muchos items (agrega de a uno)
   }
 }
 
