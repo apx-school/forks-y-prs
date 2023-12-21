@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "module": "CommonJS",
     "rootDir": "src",
-    "outDir": "dist",
-    "noEmit": true
+    "outDir": "dist"
   },
   "include": ["./src/**/*.ts"]
 }

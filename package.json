@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "test:watch": "ava --watch"
   },
   "ava": {
     "typescript": {
