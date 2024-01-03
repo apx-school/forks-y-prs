@@ -1,4 +1,4 @@
-import * as products from "./products.json";
+import products from "./products.json";
 
 class Product {
   constructor(name: string, price: number) {
