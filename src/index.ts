@@ -5,9 +5,17 @@ class Product {
     this.name = name;
     this.price = price;
   }
+
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(price: number){
+    const arrayNuevo = products.filter(p=>{
+      return p.price < price
+    })
+    return arrayNuevo;
+  }
 }
 
 class User {
@@ -21,7 +29,7 @@ class User {
   }
   addProducts(newProducts: Product[]) {
     // esto no funciona:
-    this.products.push(newProducts);
+    this.products = this.products.concat(newProducts);
     // pista: push no suma muchos items (agrega de a uno)
   }
 }
