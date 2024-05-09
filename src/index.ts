@@ -26,9 +26,7 @@ class User {
   }
   addProducts(newProducts: Product[]) {
     // esto no funciona:
-    for (let i = 0; i < newProducts.length; i++) {
-      this.products.push(newProducts[i]);
-    }
+    this.products = this.products.concat(newProducts);
     // pista: push no suma muchos items (agrega de a uno)
   }
 }
