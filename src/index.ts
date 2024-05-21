@@ -9,13 +9,17 @@ class Product {
   name: string;
   price: number;
   static findProductsBelow(precioBase: number): Product[] {
-    const prodsMasBaratosQue = [];
-    products.forEach((producto) => {
-      if (producto.price < precioBase) {
-        prodsMasBaratosQue.push(producto);
-      }
+    // const prodsMasBaratosQue = [];
+    // products.forEach((producto) => {
+    //   if (producto.price < precioBase) {
+    //     prodsMasBaratosQue.push(producto);
+    //   }
+    // });
+    // return prodsMasBaratosQue;
+    const nuevoArray = products.filter((p) => {
+      return p.price < precioBase;
     });
-    return prodsMasBaratosQue;
+    return nuevoArray;
   }
 }
 
@@ -29,9 +33,10 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    newProducts.forEach((producto) => {
-      this.products.push(producto);
-    });
+    // newProducts.forEach((producto) => {
+    //   this.products.push(producto);
+    // });
+    this.products = this.products.concat(newProducts);
   }
 }
 
