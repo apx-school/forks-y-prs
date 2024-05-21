@@ -5,6 +5,19 @@ class Product {
     this.name = name;
     this.price = price;
   }
+
+  /**
+   * ! agregar metoodo estatico : busca y devuelve 
+   * ! todos los productos cuyo precio es menor al precio especificado como argumento.
+   */
+
+  static findProductsBelow(price : number){
+    const arrayPrice= products.filter(p =>{
+      return p.price < price
+    })
+    return arrayPrice;
+  }
+
   id: number;
   name: string;
   price: number;
@@ -21,8 +34,13 @@ class User {
   }
   addProducts(newProducts: Product[]) {
     // esto no funciona:
-    this.products.push(newProducts);
+    this.products= this.products.concat(newProducts);
     // pista: push no suma muchos items (agrega de a uno)
+
+    /**
+     * ! concat 
+     * ? permite ir permite agregar elementos al array
+     */
   }
 }
 
