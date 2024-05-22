@@ -9,8 +9,8 @@ class Product {
   name: string;
   price: number;
   static findProductsBelow(price:number){
-    const productosMenoresA = products.filter(p=>{
-      return p.price <= price;
+    const productosMenoresA = products.filter(x=>{
+      return x.price <= price;
     })
     return productosMenoresA
   }
