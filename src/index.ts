@@ -8,6 +8,10 @@ class Product {
   id: number;
   name: string;
   price: number;
+  static findProductsBelow(precioBase: number) {
+    const productosMenores = products.filter((product) => product.price < precioBase);
+    return productosMenores;
+  }
 }
 
 class User {
@@ -16,13 +20,12 @@ class User {
   }
   name: string;
   products: Product[] = [];
-  addProduct(newProduct: Product) {
-    this.products.push(newProduct);
+  addProduct(product: Product) {
+    product.id = this.products.length; // Asignar un id incremental
+    this.products.push(product);
   }
-  addProducts(newProducts: Product[]) {
-    // esto no funciona:
-    this.products.push(newProducts);
-    // pista: push no suma muchos items (agrega de a uno)
+  addProducts(products: Product[]) {
+    this.products.push(...products);
   }
 }
 
