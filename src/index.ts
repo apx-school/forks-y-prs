@@ -8,6 +8,13 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  findProductsBelow(precioBase : number): any {
+    const resultado = products.filter(prod => prod.price < precioBase );
+    
+    return resultado;
+
+  }
 }
 
 class User {
