@@ -46,7 +46,6 @@ class User {
   addProducts(newProducts: Product[]) {
     // esto no funciona:
     newProducts.forEach((i) => {this.products.push(i)});
-    return this.products
     // pista: push no suma muchos items (agrega de a uno)
   }
 }
