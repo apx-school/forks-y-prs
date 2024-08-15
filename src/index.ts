@@ -8,6 +8,13 @@ class Product {
   id: number;
   name: string;
   price: number;
+
+  static findProductsBelow(precioBase: number) {
+    const encontrarProductos = products.filter(
+      (producto) => producto.price < precioBase
+    );
+    return encontrarProductos;
+  }
 }
 
 class User {
@@ -20,9 +27,7 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    // esto no funciona:
-    this.products.push(newProducts);
-    // pista: push no suma muchos items (agrega de a uno)
+    newProducts.forEach((producto) => this.products.push(producto));
   }
 }
 
