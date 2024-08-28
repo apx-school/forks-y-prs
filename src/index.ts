@@ -1,29 +1,38 @@
 import products from "./products.json";
 
-class Product {
-  constructor(name: string, price: number) {
+export class Product {
+  name: string;
+  price: number;
+  id: number
+  
+  constructor(name: string, price: number, id: number) {
     this.name = name;
     this.price = price;
   }
-  id: number;
-  name: string;
-  price: number;
+
+  static findProductsBelow(priceThreshold: number): Product[] {
+    return products.filter((product) => product.price < priceThreshold);
+  }
 }
 
-class User {
+export class User {
+  name: string;
+  products: Product[];
+
   constructor(name: string) {
     this.name = name;
+    this.products = [];
   }
-  name: string;
-  products: Product[] = [];
-  addProduct(newProduct: Product) {
-    this.products.push(newProduct);
+
+  addProduct(newProduct: Product): void {
+    this.products = this.products.concat(newProduct);
   }
-  addProducts(newProducts: Product[]) {
-    // esto no funciona:
-    this.products.push(newProducts);
-    // pista: push no suma muchos items (agrega de a uno)
+
+  addProducts(newProducts: Product[]): void {
+    this.products.push(...newProducts);
   }
 }
 
-export { User, Product };
+
+
+exports.User = User;
