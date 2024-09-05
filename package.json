@@ -1,7 +1,7 @@
 {
   "name": "test-ava",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tienen que importar e instanciar las clases User y Producto y probar todos sus métodos",
   "main": "index.ts",
   "scripts": {
     "test": "ava",
@@ -22,7 +22,8 @@
   "devDependencies": {
     "@ava/typescript": "^4.1.0",
     "ava": "^6.0.1",
-    "typescript": "^5.3.3",
-    "tsx": "^4.7.0"
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.5.4"
   }
 }
