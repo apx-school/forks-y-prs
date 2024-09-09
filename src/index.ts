@@ -8,6 +8,9 @@ class Product {
   id: number;
   name: string;
   price: number;
+  static findProductsBelow(){
+    
+  }
 }
 
 class User {
@@ -21,7 +24,10 @@ class User {
   }
   addProducts(newProducts: Product[]) {
     // esto no funciona:
-    this.products.push(newProducts);
+    //for (var i of newProducts){
+      //this.products.push(i);
+    //}
+    newProducts.filter(producto => this.products.push(producto))
     // pista: push no suma muchos items (agrega de a uno)
   }
 }
