@@ -21,8 +21,17 @@ class User {
   }
   addProducts(newProducts: Product[]) {
     // esto no funciona:
-    this.products.push(newProducts);
+    for(let i=0;i<newProducts.length;i++){
+      this.products.push(newProducts[i]);
+    }
     // pista: push no suma muchos items (agrega de a uno)
+  }
+  static findProductBelow(precioBase:number){
+    for(let i=0;i<products.length;i++){
+      if(products[i].price<precioBase){
+        return products[i];
+      }
+    }
   }
 }
 
