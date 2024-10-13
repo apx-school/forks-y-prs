@@ -1,18 +1,16 @@
 {
-  "name": "test-ava",
-  "version": "1.0.0",
+  "name": "testing-con-ava",
+  "version": "1.0.1",
   "description": "",
   "main": "index.ts",
   "scripts": {
     "test": "ava",
-    "test:watch": "ava --watch",
-    "dev": "tsx --watch src/index.ts",
-    "build": "tsc"
+    "test:watch": "ava --watch"
   },
   "ava": {
     "typescript": {
       "rewritePaths": {
-        "src/": "dist/" 
+        "src/": "dist/"
       },
       "compile": "tsc"
     }
@@ -22,10 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@ava/typescript": "^4.1.0",
-    "@types/node": "^22.7.5",
-    "ava": "^6.1.3",
-    "fs": "^0.0.1-security",
-    "tsx": "^4.7.0",
+    "ava": "^6.0.1",
     "typescript": "^5.3.3"
   }
 }
