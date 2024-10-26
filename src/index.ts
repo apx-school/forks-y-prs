@@ -8,12 +8,13 @@ class Product {
   id: number;
   name: string;
   price: number;
-  static findProductsBelow(precioBase: number) {
+  static findProductsBelow(precioBase: number): Product[] {
     const productos = JSON.stringify("./products.json");
     const productosParseados = JSON.parse(productos);
     let productosFiltrados = productosParseados.filter(
       (item) => item.price <= precioBase
     );
+    return productosFiltrados;
   }
 }
 
