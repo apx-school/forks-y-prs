@@ -20,10 +20,17 @@ class User {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    // esto no funciona:
-    this.products.push(newProducts);
-    // pista: push no suma muchos items (agrega de a uno)
+    
+
+    this.products.push(...newProducts);
+    
   }
+
+  findProductsBelow (precio: number): Product[]{
+
+    return this.products.filter((p) => p.price < precio);
+    
+  };
 }
 
 export { User, Product };
