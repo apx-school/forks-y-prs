@@ -12,7 +12,7 @@ test("Testeo la clase User", (t) => {
 test("Testeo la clase Product y sus métodos", (t) => {
   const user = new User("marce");
   const producto = new Product("termo", 500);
-  // este test va a fallar porque el método estatico findProductsBelow no existe
+
   const productosNoTanCaros = Product.findProductsBelow(250);
 
   user.addProduct(producto);
