@@ -10,8 +10,8 @@ class Product {
     this.price = price;
   }
 
-  static findProductsBelow(precioBase: number) {
-    return products.filter((product) => product.price < precioBase);
+  static findProductsBelow(precioBase: number): Product[] | undefined {
+    return products.filter(product => product.price < precioBase);
   }
 }
 
@@ -23,11 +23,11 @@ class User {
     this.name = name;
   }
 
-  addProduct(newProduct: Product) {
+  addProduct(newProduct: Product): void {
     this.products.push(newProduct);
   }
 
-  addProducts(newProducts: Product[]) {
+  addProducts(newProducts: Product[]): void {
     for (const product of newProducts) {
       this.products.push(product);
     }
