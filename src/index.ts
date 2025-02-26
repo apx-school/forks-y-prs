@@ -1,14 +1,29 @@
 import products from "./products.json";
 
 class Product {
+  static products:Product[] = [];
   constructor(name: string, price: number) {
     this.name = name;
     this.price = price;
+    this.id = Product.products.length + 1;
+    Product.products.push(this);
   }
   id: number;
   name: string;
   price: number;
+
+  static initProducts() {
+    new Product("Producto1", 100);
+    new Product("Producto2", 200);
+  }
+
+  static findProductsBelow(precio:number){
+     
+    return Product.products.filter((product) =>  product.price < precio)
+
+   }
 }
+
 
 class User {
   constructor(name: string) {
@@ -16,14 +31,19 @@ class User {
   }
   name: string;
   products: Product[] = [];
+
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
   addProducts(newProducts: Product[]) {
-    // esto no funciona:
-    this.products.push(newProducts);
-    // pista: push no suma muchos items (agrega de a uno)
+   
+    
+    this.products.push(...newProducts)
+   
   }
+  
+
+
 }
 
 export { User, Product };

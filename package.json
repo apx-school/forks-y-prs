@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "ava",
+    "build": "tsc",
+    "test": "npm run build && ava",
     "test:watch": "ava --watch",
     "dev": "tsx --watch src/index.ts"
   },
@@ -13,7 +14,7 @@
       "rewritePaths": {
         "src/": "dist/"
       },
-      "compile": "tsc"
+      "compile": false
     },
     "workerThreads": false
   },
