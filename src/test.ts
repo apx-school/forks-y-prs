@@ -1,6 +1,7 @@
 import test from "ava";
 import { User, Product } from "./index";
 
+Product.initProducts();
 test("Testeo la clase User", (t) => {
   const user = new User("marce");
 
