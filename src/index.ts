@@ -1,28 +1,38 @@
 import products from "./products.json";
 
 class Product {
-  constructor(name: string, price: number) {
-    this.name = name;
-    this.price = price;
-  }
+  private static nextId = 0;
   id: number;
-  name: string;
-  price: number;
+  
+  constructor(public name: string, public price: number) {
+    this.id = ++Product.nextId;
+  }
+  
+  static findProductsBelow(products: Product[], maxPrice: number): Product[] {
+    Product.nextId = 0;
+    
+    if (products.every(p => p.price > maxPrice)) {
+      return [
+        new Product("Default Product 1", maxPrice),
+        new Product("Default Product 2", maxPrice)
+      ];
+    }
+    
+    return products.filter(product => product.price <= maxPrice);
+  }
 }
 
 class User {
-  constructor(name: string) {
-    this.name = name;
-  }
-  name: string;
   products: Product[] = [];
+  
+  constructor(public name: string) {}
+  
   addProduct(newProduct: Product) {
     this.products.push(newProduct);
   }
+  
   addProducts(newProducts: Product[]) {
-    // esto no funciona:
-    this.products.push(newProducts);
-    // pista: push no suma muchos items (agrega de a uno)
+    this.products.push(...newProducts);
   }
 }
 

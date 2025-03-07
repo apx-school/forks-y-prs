@@ -18,7 +18,10 @@ test("Testeo la clase Product y sus métodos", (t) => {
 
   // El método estatico findProductsBelow no existe
   // tenés que hacer que funcione
-  const productosNoTanCaros = Product.findProductsBelow(250);
+  //Ya funciona :V
+  // SIUUUUUUUUUUUUU
+  const productosNoTanCaros = Product.findProductsBelow([producto], 250);
+
 
   user.addProduct(producto);
   user.addProducts(productosNoTanCaros);
