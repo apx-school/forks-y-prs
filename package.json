@@ -2,7 +2,7 @@
   "name": "test-ava",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+   "main": "index.ts",
   "scripts": {
     "test": "ava",
     "test:watch": "ava --watch",
